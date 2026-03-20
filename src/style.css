@@ -1,0 +1,114 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+  background: #06070b;
+  color: #f2e9d8;
+}
+
+html, body, #app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(76, 103, 164, 0.25), transparent 45%),
+    linear-gradient(#07080d, #06070b);
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: 340px 1fr 340px;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  padding: 14px;
+}
+
+.panel {
+  background: rgba(8, 10, 18, 0.72);
+  border: 1px solid rgba(253, 199, 96, 0.3);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  padding: 14px 16px;
+}
+
+.title-panel { grid-column: 1 / 2; }
+.stats-panel { grid-column: 3 / 4; }
+.log-panel { grid-column: 1 / 2; align-self: end; max-height: 36vh; overflow: auto; }
+.controls-panel { grid-column: 3 / 4; align-self: end; }
+.town-panel {
+  grid-column: 2 / 3;
+  align-self: start;
+  justify-self: center;
+  width: min(520px, 90%);
+  text-align: center;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.intro-panel, .end-panel {
+  width: min(760px, calc(100% - 32px));
+  pointer-events: auto;
+}
+
+button {
+  margin-top: 16px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #1e1305;
+  background: linear-gradient(135deg, #f7d78b, #d9872c);
+}
+
+h1, h2, h3, p, ul { margin-top: 0; }
+ul { padding-left: 18px; margin-bottom: 0; }
+.hidden { display: none; }
+
+#stats div, #skills div, #townRewards div {
+  margin-bottom: 8px;
+}
+
+#log {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.log-entry {
+  border-left: 3px solid rgba(247, 215, 139, 0.7);
+  padding-left: 10px;
+  color: #e6dcc8;
+}
+
+.hint { color: #f7d78b; }
+
+@media (max-width: 1100px) {
+  #hud {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+  .title-panel, .stats-panel, .log-panel, .controls-panel, .town-panel {
+    grid-column: auto;
+  }
+}

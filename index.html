@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kingdom Road: Hollow Torches</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game"></canvas>
+      <div id="hud">
+        <div class="panel title-panel">
+          <h1>Kingdom Road: Hollow Torches</h1>
+          <p>Fully 3D first-person survival horror: survive the cursed road from Dunmere to the Ember Kingdom.</p>
+        </div>
+        <div class="panel stats-panel">
+          <div id="stats"></div>
+          <div id="skills"></div>
+        </div>
+        <div class="panel log-panel">
+          <h2>Quest Journal</h2>
+          <div id="log"></div>
+        </div>
+        <div class="panel town-panel hidden" id="townPanel">
+          <h2 id="townTitle">Town Rest</h2>
+          <p id="townDescription"></p>
+          <div id="townRewards"></div>
+          <p class="hint">Press <strong>E</strong> to depart on the next leg of the road.</p>
+        </div>
+        <div class="panel controls-panel">
+          <h2>Controls</h2>
+          <ul>
+            <li>Look: Mouse</li>
+            <li>Move: WASD / Arrow Keys</li>
+            <li>Sprint: Shift</li>
+            <li>Attack: Left Click or Space</li>
+            <li>Dash Slash: Q</li>
+            <li>Nova Burst: R</li>
+            <li>Drink Potion: 1 / 2</li>
+            <li>Interact at town: E</li>
+          </ul>
+        </div>
+      </div>
+      <div id="overlay">
+        <div class="panel intro-panel" id="introPanel">
+          <h2>Six Fires Stand Between You and the Crown</h2>
+          <p>
+            The old kingdom road is the last surviving artery between the frontier town of Dunmere and
+            the Ember Kingdom. The woods around it are haunted by creatures drawn to the soul-flames in the torches.
+            You are Caelan, an oathsworn warden escorting the Heartflame Ember to the capital before the woods consume the realm.
+          </p>
+          <p>
+            Reach six towns, claim stronger blessings in each refuge, survive ambushes from cursed beasts in the woods, and deliver the Heartflame Ember to the kingdom at dawn.
+            Click into the game to capture the mouse and look around freely.
+          </p>
+          <button id="startButton">Begin the Road</button>
+        </div>
+        <div class="panel end-panel hidden" id="endPanel"></div>
+      </div>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
