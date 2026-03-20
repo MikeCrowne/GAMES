@@ -1,0 +1,7 @@
+{
+  "name": "kingdom-road",
+  "private": true,
+  "scripts": {
+    "serve": "python3 -m http.server 4173"
+  }
+}
